@@ -43,7 +43,7 @@ router.get("/:id/edit", isLoggedIn,isOwner, wrapAsync(async (req, res) => {
 }));
 
 //show Route
-router.get("/:id" ,wrapAsync( async(req,res)=>{
+router.get("/:id" ,isLoggedIn,wrapAsync( async(req,res)=>{
     let {id} = req.params;
      const listing = await Listing.findById(id).populate({path:"reviews", populate:{path:"author",},}).populate("owner");
      if(!listing){
