@@ -82,8 +82,10 @@
         </div>    
     </div>
     <script>
-        const mapToken ="<%= process.env.MAP_TOKEN%>";
-    </script>
-    <script src="/js/map.js"></script>
+    window.mapToken = "<%= process.env.MAP_TOKEN %>";
+    window.coordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
+</script>
+
+<script src="/js/map.js"></script>
 
 
