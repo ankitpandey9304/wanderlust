@@ -23,7 +23,7 @@ router.get("/new", isLoggedIn,listingController.renderNewRoute);
 
 router.route("/:id")
 //show Route
-.get(isLoggedIn,wrapAsync(listingController.showListing ))
+.get(wrapAsync(listingController.showListing ))
 //Update Route
 .put(isLoggedIn,isOwner,upload.single('listing[image]'),validateListing, 
   wrapAsync(listingController.updateListing))
