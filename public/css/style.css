@@ -108,3 +108,95 @@ body{
      height: 400px;
      width: 80vh;
     }
+
+    .top-div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Filters container */
+#filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    flex: 1;
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    flex-wrap: nowrap;
+    white-space: nowrap;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    scroll-behavior: smooth;
+}
+
+#filters::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual filter */
+.filter {
+    flex: 0 0 auto;
+    min-width: 65px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px 0;
+    color: #717171;
+
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filter i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.filter p {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.filter:hover {
+    color: #222;
+    border-bottom: 2px solid #222;
+}
+
+/* Tax switch */
+.tax-switch {
+    flex: 0 0 auto;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+}
+
+.form-field {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-field label {
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tax-info{
+display: none;
+}
