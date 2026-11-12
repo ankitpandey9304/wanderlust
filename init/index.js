@@ -1,3 +1,7 @@
+const dns = require("dns");
+
+// Use Google DNS
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 const path = require("path");
 
 require("dotenv").config({
@@ -11,7 +15,7 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const dbUrl = process.env.ATLASDB_URL;
 
 // Function to get geometry from location
 const getGeometry = async (location) => {
@@ -43,7 +47,7 @@ const getGeometry = async (location) => {
 
 // Database connection
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect(dbUrl);
   console.log("Connected to DB");
 }
 
