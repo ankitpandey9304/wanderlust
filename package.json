@@ -1,9 +1,14 @@
 {
+  "engines":{
+    "node": "v24.18.1"
+  },
   "name": "project1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +19,7 @@
     "@mapbox/mapbox-sdk": "^0.16.2",
     "cloudinary": "^2.11.0",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^18.0.9",
     "ejs": "^6.0.1",
@@ -30,5 +36,8 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^9.2.1",
     "session": "^0.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
