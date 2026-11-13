@@ -62,7 +62,7 @@ const initDB = async () => {
 
         return {
           ...obj,
-          owner: "6acf48da8dc8403f52ab3c9e",
+          owner: "6af5fded21bad8e7b42c4410",
           geometry,
         };
       })
