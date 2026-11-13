@@ -50,9 +50,9 @@ const store = MongoStore.create({
     touchAfter : 24*3600,
 });
 
-store.on("error", () =>{
-    console.log("Error in Mongo Session Store", err)
-})
+store.on("error", (err) => {
+    console.log("Error in Mongo Session Store", err);
+});
 
 const sessionOptions ={
     store,
@@ -86,12 +86,17 @@ app.use((req,res,next) =>{
     next();
 })
 
-//router
-app.use("/listings" , listingRouter);
+// Router
+app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
+// Redirect home page to listings
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
+// 404 middleware
 app.all("/{*splat}", (req, res, next) => {
     next(new ExpressError(404, "Page not found!"));
 });
